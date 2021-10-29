@@ -12,9 +12,13 @@ URL:        https://github.com/%{gituser}/%{gitrepo}.git
 Source0:    https://github.com/%{gituser}/%{gitrepo}/archive/refs/tags/%{version}.tar.gz
 
 BuildRequires:  make cargo openssl-devel gtk3-devel
-# xdg-open qalc locale pactl
-Requires:       libqulculate gnome-shell-extension-pop-shell
+# xdg-open qalc locale pactl fdfind
+Requires:       gnome-shell-extension-pop-shell
+Requires:       libqulculate
+Requires:       xdg-utils
+Requires:       glibc-common
 
+# TODO: Remove pulse plugin folder
 # dnf repoquery --provides libqalculate
 # dnf repoquery --whatrequires 'libqalculate.so.21()(64bit)'
 
