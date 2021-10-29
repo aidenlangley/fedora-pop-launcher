@@ -12,6 +12,7 @@ URL:        https://github.com/%{gituser}/%{gitrepo}.git
 Source0:    https://github.com/%{gituser}/%{gitrepo}/archive/refs/tags/%{version}.tar.gz
 
 BuildRequires:  make cargo openssl-devel gtk3-devel
+# xdg-open qalc locale pactl
 Requires:       libqulculate gnome-shell-extension-pop-shell
 
 # dnf repoquery --provides libqalculate
