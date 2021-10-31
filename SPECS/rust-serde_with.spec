@@ -2,16 +2,16 @@
 %bcond_with check
 %global debug_package %{nil}
 
-%global crate const_format
+%global crate serde_with
 
 Name:           rust-%{crate}
-Version:        0.2.22
+Version:        1.9.4
 Release:        %autorelease
-Summary:        Compile-time string formatting
+Summary:        Custom de/serialization functions for Rust's serde
 
-# Upstream license specification: Zlib
-License:        zlib
-URL:            https://crates.io/crates/const_format
+# Upstream license specification: MIT OR Apache-2.0
+License:        MIT or ASL 2.0
+URL:            https://crates.io/crates/serde_with
 Source:         %{crates_source}
 
 ExclusiveArch:  %{rust_arches}
@@ -22,7 +22,7 @@ BuildArch:      noarch
 BuildRequires:  rust-packaging
 
 %global _description %{expand:
-Compile-time string formatting.}
+Custom de/serialization functions for Rust's serde.}
 
 %description %{_description}
 
@@ -36,7 +36,8 @@ This package contains library source intended for building other packages
 which use "%{crate}" crate.
 
 %files          devel
-%license LICENSE-ZLIB.md
+%license LICENSE-MIT LICENSE-APACHE
+%doc README.tpl README.md CHANGELOG.md src/guide.md src/guide/serde_as.md src/guide/feature_flags.md
 %{cargo_registry}/%{crate}-%{version_no_tilde}/
 
 %package     -n %{name}+default-devel
@@ -51,136 +52,112 @@ which use "default" feature of "%{crate}" crate.
 %files       -n %{name}+default-devel
 %ghost %{cargo_registry}/%{crate}-%{version_no_tilde}/Cargo.toml
 
-%package     -n %{name}+all-devel
+%package     -n %{name}+chrono-devel
 Summary:        %{summary}
 BuildArch:      noarch
 
-%description -n %{name}+all-devel %{_description}
+%description -n %{name}+chrono-devel %{_description}
 
 This package contains library source intended for building other packages
-which use "all" feature of "%{crate}" crate.
+which use "chrono" feature of "%{crate}" crate.
 
-%files       -n %{name}+all-devel
+%files       -n %{name}+chrono-devel
 %ghost %{cargo_registry}/%{crate}-%{version_no_tilde}/Cargo.toml
 
-%package     -n %{name}+assert-devel
+%package     -n %{name}+chrono_crate-devel
 Summary:        %{summary}
 BuildArch:      noarch
 
-%description -n %{name}+assert-devel %{_description}
+%description -n %{name}+chrono_crate-devel %{_description}
 
 This package contains library source intended for building other packages
-which use "assert" feature of "%{crate}" crate.
+which use "chrono_crate" feature of "%{crate}" crate.
 
-%files       -n %{name}+assert-devel
+%files       -n %{name}+chrono_crate-devel
 %ghost %{cargo_registry}/%{crate}-%{version_no_tilde}/Cargo.toml
 
-%package     -n %{name}+const_generics-devel
+%package     -n %{name}+doc-comment-devel
 Summary:        %{summary}
 BuildArch:      noarch
 
-%description -n %{name}+const_generics-devel %{_description}
+%description -n %{name}+doc-comment-devel %{_description}
 
 This package contains library source intended for building other packages
-which use "const_generics" feature of "%{crate}" crate.
+which use "doc-comment" feature of "%{crate}" crate.
 
-%files       -n %{name}+const_generics-devel
+%files       -n %{name}+doc-comment-devel
 %ghost %{cargo_registry}/%{crate}-%{version_no_tilde}/Cargo.toml
 
-%package     -n %{name}+constant_time_as_str-devel
+%package     -n %{name}+guide-devel
 Summary:        %{summary}
 BuildArch:      noarch
 
-%description -n %{name}+constant_time_as_str-devel %{_description}
+%description -n %{name}+guide-devel %{_description}
 
 This package contains library source intended for building other packages
-which use "constant_time_as_str" feature of "%{crate}" crate.
+which use "guide" feature of "%{crate}" crate.
 
-%files       -n %{name}+constant_time_as_str-devel
+%files       -n %{name}+guide-devel
 %ghost %{cargo_registry}/%{crate}-%{version_no_tilde}/Cargo.toml
 
-%package     -n %{name}+debug-devel
+%package     -n %{name}+hex-devel
 Summary:        %{summary}
 BuildArch:      noarch
 
-%description -n %{name}+debug-devel %{_description}
+%description -n %{name}+hex-devel %{_description}
 
 This package contains library source intended for building other packages
-which use "debug" feature of "%{crate}" crate.
+which use "hex" feature of "%{crate}" crate.
 
-%files       -n %{name}+debug-devel
+%files       -n %{name}+hex-devel
 %ghost %{cargo_registry}/%{crate}-%{version_no_tilde}/Cargo.toml
 
-%package     -n %{name}+derive-devel
+%package     -n %{name}+json-devel
 Summary:        %{summary}
 BuildArch:      noarch
 
-%description -n %{name}+derive-devel %{_description}
+%description -n %{name}+json-devel %{_description}
 
 This package contains library source intended for building other packages
-which use "derive" feature of "%{crate}" crate.
+which use "json" feature of "%{crate}" crate.
 
-%files       -n %{name}+derive-devel
+%files       -n %{name}+json-devel
 %ghost %{cargo_registry}/%{crate}-%{version_no_tilde}/Cargo.toml
 
-%package     -n %{name}+docsrs-devel
+%package     -n %{name}+macros-devel
 Summary:        %{summary}
 BuildArch:      noarch
 
-%description -n %{name}+docsrs-devel %{_description}
+%description -n %{name}+macros-devel %{_description}
 
 This package contains library source intended for building other packages
-which use "docsrs" feature of "%{crate}" crate.
+which use "macros" feature of "%{crate}" crate.
 
-%files       -n %{name}+docsrs-devel
+%files       -n %{name}+macros-devel
 %ghost %{cargo_registry}/%{crate}-%{version_no_tilde}/Cargo.toml
 
-%package     -n %{name}+fmt-devel
+%package     -n %{name}+serde_json-devel
 Summary:        %{summary}
 BuildArch:      noarch
 
-%description -n %{name}+fmt-devel %{_description}
+%description -n %{name}+serde_json-devel %{_description}
 
 This package contains library source intended for building other packages
-which use "fmt" feature of "%{crate}" crate.
+which use "serde_json" feature of "%{crate}" crate.
 
-%files       -n %{name}+fmt-devel
+%files       -n %{name}+serde_json-devel
 %ghost %{cargo_registry}/%{crate}-%{version_no_tilde}/Cargo.toml
 
-%package     -n %{name}+nightly_const_generics-devel
+%package     -n %{name}+serde_with_macros-devel
 Summary:        %{summary}
 BuildArch:      noarch
 
-%description -n %{name}+nightly_const_generics-devel %{_description}
+%description -n %{name}+serde_with_macros-devel %{_description}
 
 This package contains library source intended for building other packages
-which use "nightly_const_generics" feature of "%{crate}" crate.
+which use "serde_with_macros" feature of "%{crate}" crate.
 
-%files       -n %{name}+nightly_const_generics-devel
-%ghost %{cargo_registry}/%{crate}-%{version_no_tilde}/Cargo.toml
-
-%package     -n %{name}+only_new_tests-devel
-Summary:        %{summary}
-BuildArch:      noarch
-
-%description -n %{name}+only_new_tests-devel %{_description}
-
-This package contains library source intended for building other packages
-which use "only_new_tests" feature of "%{crate}" crate.
-
-%files       -n %{name}+only_new_tests-devel
-%ghost %{cargo_registry}/%{crate}-%{version_no_tilde}/Cargo.toml
-
-%package     -n %{name}+testing-devel
-Summary:        %{summary}
-BuildArch:      noarch
-
-%description -n %{name}+testing-devel %{_description}
-
-This package contains library source intended for building other packages
-which use "testing" feature of "%{crate}" crate.
-
-%files       -n %{name}+testing-devel
+%files       -n %{name}+serde_with_macros-devel
 %ghost %{cargo_registry}/%{crate}-%{version_no_tilde}/Cargo.toml
 
 %prep
