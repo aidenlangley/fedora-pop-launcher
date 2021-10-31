@@ -5,7 +5,7 @@
 %global crate const_format
 
 Name:           rust-%{crate}
-Version:        0.2.20
+Version:        0.2.22
 Release:        %autorelease
 Summary:        Compile-time string formatting
 
