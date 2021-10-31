@@ -20,7 +20,6 @@ BuildArch:      noarch
 %endif
 
 BuildRequires:  rust-packaging
-BuildRequires:  rust-const_format_proc_macros
 
 %global _description %{expand:
 Compile-time string formatting.}

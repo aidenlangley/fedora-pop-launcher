@@ -23,7 +23,6 @@ BuildArch:      noarch
 %endif
 
 BuildRequires:  rust-packaging
-BuildRequires:  rust-const_format
 Requires:       gnome-shell-extension-pop-shell
 Requires:       libqalculate
 Requires:       xdg-utils
