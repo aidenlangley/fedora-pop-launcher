@@ -62,7 +62,7 @@ which use "default" feature of "%{crate}" crate.
 %ghost  %{cargo_registry}/%{crate}-%{version_no_tilde}/Cargo.toml
 
 %prep
-%autosetup  -n %{crate}-%{version_no_tilde} -p1
+%autosetup  -n %{gitrepo}-%{version_no_tilde} -p1
 %cargo_prep
 
 %generate_buildrequires
