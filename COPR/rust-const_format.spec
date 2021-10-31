@@ -202,5 +202,5 @@ which use "testing" feature of "%{crate}" crate.
 %endif
 
 %changelog
-* Sun Oct 31 2021 nedia <me@aidenlangley.com> - 0.2.22-1
+* Sun Oct 31 2021 nedia <me@aidenlangley.com> - 0.2.20-1
 - Initial package

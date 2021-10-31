@@ -5,7 +5,7 @@
 %global crate const_format_proc_macros
 
 Name:           rust-%{crate}
-Version:        0.2.22
+Version:        0.2.20
 Release:        1%{?dist}
 Summary:        Implementation detail of the `const_format` crate
 
@@ -118,5 +118,5 @@ which use "syn" feature of "%{crate}" crate.
 %endif
 
 %changelog
-* Sun Oct 31 2021 nedia <me@aidenlangley.com> - 0.2.22-1
+* Sun Oct 31 2021 nedia <me@aidenlangley.com> - 0.2.20-1
 - Initial package
