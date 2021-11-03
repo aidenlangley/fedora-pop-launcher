@@ -1,0 +1,12 @@
+diff '--color=auto' -uNr pretty_assertions-1.0.0/Cargo.toml pretty_assertions-1.0.0p/Cargo.toml
+--- pretty_assertions-1.0.0/Cargo.toml	1970-01-01 12:00:01.000000000 +1200
++++ pretty_assertions-1.0.0p/Cargo.toml	2021-11-03 19:42:23.619267739 +1300
+@@ -32,8 +32,3 @@
+ default = ["std"]
+ std = []
+ unstable = []
+-[target."cfg(windows)".dependencies.ctor]
+-version = "0.1.9"
+-
+-[target."cfg(windows)".dependencies.output_vt100]
+-version = "0.1.2"
