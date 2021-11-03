@@ -52,7 +52,7 @@ which use "default" feature of "%{crate}" crate.
 %cargo_generate_buildrequires
 
 %build
-%make
+%cargo_build
 
 %install
 %make_install
