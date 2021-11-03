@@ -4,7 +4,7 @@
 
 %global crate pop-launcher
 
-Name:           rust-%{crate}
+Name:           %{crate}
 Version:        1.0.3
 Release:        %autorelease
 Summary:        Library for writing plugins and frontends for pop-launcher
