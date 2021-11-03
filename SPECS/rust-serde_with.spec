@@ -4,7 +4,7 @@
 
 %global crate serde_with
 
-Name:           rust-%{crate}
+Name:           rust-%{crate}%{version}
 Version:        1.9.4
 Release:        %autorelease
 Summary:        Custom de/serialization functions for Rust's serde

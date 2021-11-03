@@ -13,7 +13,7 @@ Summary:        Overwrite `assert_eq!` and `assert_ne!` with drop-in replacement
 License:        MIT or ASL 2.0
 URL:            https://crates.io/crates/pretty_assertions
 Source:         %{crates_source}
-Patch0:         pretty_assertions-1.0.0.patch
+Patch0:         %{crate}-%{version}.patch
 
 ExclusiveArch:  %{rust_arches}
 %if %{__cargo_skip_build}
