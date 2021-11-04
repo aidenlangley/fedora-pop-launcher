@@ -45,8 +45,9 @@ the queries sent to the service.
 %files
 %license COPYING
 %doc README.md debian/changelog
-%dir %{_prefix}/lib/plugins/
-%dir %{_prefix}/lib/scripts/
+%{_bindir}/pop-launcher
+%dir %{_prefix}/lib/%{name}/plugins/
+%dir %{_prefix}/lib/%{name}/scripts/
 
 %changelog
 * Thu Nov 04 2021 Aiden Langley <me@aidenlangley.com> - 1.0.3
