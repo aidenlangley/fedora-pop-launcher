@@ -36,15 +36,15 @@ the queries sent to the service.
 %prep
 %autosetup -n %{gitrepo}-%{commit} -p1
 
-%build
-%make_build
-
 %files
 %license    COPYING
 %doc        README.md debian/changelog
 %dir        %{_prefix}/lib/%{name}/plugins/
 %dir        %{_prefix}/lib/%{name}/scripts/
 %{_bindir}/pop-launcher
+
+%build
+%make_build
 
 %install
 %make_install
