@@ -33,7 +33,7 @@ the queries sent to the service.
 %autosetup -n %{gitrepo}-%{commit} -p1
 
 %build
-%make_build compile
+%make_build
 
 %install
 %make_install
