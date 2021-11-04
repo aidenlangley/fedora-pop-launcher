@@ -1,18 +1,13 @@
 diff '--color=auto' -uNr launcher/Makefile launcher.p/Makefile
 --- launcher/Makefile	2021-11-04 13:26:20.500865946 +1300
-+++ launcher.p/Makefile	2021-11-05 00:55:32.839344522 +1300
-@@ -1,14 +1,6 @@
- TARGET = debug
- DEBUG ?= 0
- 
--ifeq ($(DESTDIR),)
--BASE_PATH = $(HOME)/.local
--LIB_PATH = $(BASE_PATH)/share
--else
++++ launcher.p/Makefile	2021-11-05 01:42:46.967728828 +1300
+@@ -5,8 +5,7 @@
+ BASE_PATH = $(HOME)/.local
+ LIB_PATH = $(BASE_PATH)/share
+ else
 -BASE_PATH = $(DESTDIR)/usr
 -LIB_PATH = $(BASE_PATH)/lib
--endif
--
++BASE_PATH = /usr
+ endif
+ 
  LAUNCHER_DIR = $(LIB_PATH)/pop-launcher
- SCRIPTS_DIR = $(LAUNCHER_DIR)/scripts
- PLUGIN_DIR = $(LAUNCHER_DIR)/plugins

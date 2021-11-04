@@ -19,6 +19,7 @@ Source0:    %{url}/archive/%{commit}/%{gitrepo}-%{commit}.tar.gz
 
 # https://bradthemad.org/tech/notes/patching_rpms.php
 # diff -uNr launcher launcher.p/ > launcher.patch
+Patch0:     %{gitrepo}-170c6bbfb25c0683c4e70701a1da88613968cf2a.patch
 
 BuildRequires:  cargo gtk3-devel openssl-devel
 Requires:       gnome-shell-extension-pop-shell
@@ -44,11 +45,24 @@ the queries sent to the service.
 
 # https://docs.fedoraproject.org/en-US/packaging-guidelines/RPMMacros/
 %install
-%make_install
+%make_install LIB_PATH="%{_libdir}"
 
 %files
 %license COPYING
 %doc README.md debian/changelog
+%{_binpath}/%{name}
+%dir %{_libdir}/%{name}/plugins/calc/
+%dir %{_libdir}/%{name}/plugins/desktop_entries/
+%dir %{_libdir}/%{name}/plugins/files/
+%dir %{_libdir}/%{name}/plugins/find/
+%dir %{_libdir}/%{name}/plugins/pop_shell/
+%dir %{_libdir}/%{name}/plugins/pulse/
+%dir %{_libdir}/%{name}/plugins/recent/
+%dir %{_libdir}/%{name}/plugins/scripts/
+%dir %{_libdir}/%{name}/plugins/terminal/
+%dir %{_libdir}/%{name}/plugins/web/
+%dir %{_libdir}/%{name}/scripts/session/
+%dir %{_libdir}/%{name}/scripts/system76-power/
 
 %changelog
 * Thu Nov 04 2021 Aiden Langley <me@aidenlangley.com> - 1.0.3-170c6bbfb25c0683c4e70701a1da88613968cf2a
