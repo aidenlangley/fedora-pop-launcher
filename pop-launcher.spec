@@ -16,6 +16,7 @@ ExclusiveArch:  %{rust_arches}
 
 URL:        https://github.com/%{gituser}/%{gitrepo}
 Source0:    %{url}/archive/%{commit}/%{gitrepo}-%{commit}.tar.gz
+Patch0:     %{gitrepo}-170c6bbfb25c0683c4e70701a1da88613968cf2a.patch
 
 BuildRequires:  cargo gtk3-devel openssl-devel
 Requires:       gnome-shell-extension-pop-shell
@@ -40,7 +41,7 @@ the queries sent to the service.
 %make_build
 
 %install
-%make_install DESTDIR="/"
+%make_install BASE_PATH="%{_prefix}" LIB_PATH="%{_libdir}"
 
 %files
 %license COPYING
