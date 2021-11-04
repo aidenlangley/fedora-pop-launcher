@@ -39,19 +39,12 @@ the queries sent to the service.
 %build
 %make_build
 
-%global destlib %{_prefix}/lib
-
 %install
-%make_install DESTDIR=""
+%make_install DESTDIR="/"
 
 %files
 %license COPYING
 %doc README.md debian/changelog
-%dir %{destlib}/%{name}/plugins/
-%dir %{destlib}/%{name}/scripts/
-%{destlib}/%{name}/plugins/*
-%{destlib}/%{name}/scripts/*
-%{_bindir}/pop-launcher
 
 %changelog
 * Thu Nov 04 2021 Aiden Langley <me@aidenlangley.com> - 1.0.3-170c6bbfb25c0683c4e70701a1da88613968cf2a
