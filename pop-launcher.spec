@@ -21,10 +21,6 @@ BuildArch:      noarch
 BuildRequires:  cargo
 BuildRequires:  gtk3-devel
 BuildRequires:  openssl-devel
-BuildRequires:  rust-const_format rust-const_format_proc_macros
-BuildRequires:  rust-darling rust-darling_core rust-darling_macro
-BuildRequires:  rust-pretty_assertions
-BuildRequires:  rust-serde_with1.9.4 rust-serde_with_macros
 
 Requires:       gnome-shell-extension-pop-shell
 Requires:       libqalculate
