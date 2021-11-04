@@ -11,7 +11,7 @@ License:        GPLv3 and ASL 2.0 and MIT
 %global commit  170c6bbfb25c0683c4e70701a1da88613968cf2a
 
 URL:            https://github.com/%{gituser}/%{gitrepo}
-Source0:        https://github.com/%{gituser}/%{gitrepo}/archive/%{gitrepo}-%{commit}.tar.gz
+Source0:        %{url}/archive/%{commit}/%{gitrepo}-%{commit}.tar.gz
 
 BuildRequires:  cargo
 BuildRequires:  gtk3-devel
@@ -21,9 +21,6 @@ Requires:       gnome-shell-extension-pop-shell
 Requires:       libqalculate
 Requires:       fd-find
 Requires:       qalc
-
-Provides:       fd-find
-Provides:       qalc
 
 %description
 Modular IPC-based desktop launcher service, written in Rust. Desktop launchers
