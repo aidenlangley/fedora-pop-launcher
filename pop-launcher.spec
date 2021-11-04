@@ -42,7 +42,7 @@ the queries sent to the service.
 %global destlib %{_prefix}/lib
 
 %install
-%make_install DESTDIR=%{destlib}
+%make_install DESTDIR=""
 
 %files
 %license COPYING
