@@ -36,12 +36,8 @@ the queries sent to the service.
 %prep
 %autosetup -n %{gitrepo}-%{commit} -p1
 
-%build
-%make_build
-
 %install
 %make_install
-
 
 %files
 %license COPYING
