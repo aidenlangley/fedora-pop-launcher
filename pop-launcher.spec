@@ -19,7 +19,6 @@ Source0:    %{url}/archive/%{commit}/%{gitrepo}-%{commit}.tar.gz
 
 # https://bradthemad.org/tech/notes/patching_rpms.php
 # diff -uNr launcher launcher.p/ > launcher.patch
-#Patch0:     %{gitrepo}-170c6bbfb25c0683c4e70701a1da88613968cf2a.patch
 
 BuildRequires:  cargo gtk3-devel openssl-devel
 Requires:       gnome-shell-extension-pop-shell
@@ -45,7 +44,7 @@ the queries sent to the service.
 
 # https://docs.fedoraproject.org/en-US/packaging-guidelines/RPMMacros/
 %install
-%make_install BASE_PATH="%{_prefix}" LIB_PATH="%{_libdir}"
+%make_install
 
 %files
 %license COPYING
