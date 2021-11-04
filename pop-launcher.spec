@@ -16,13 +16,13 @@ ExclusiveArch:  %{rust_arches}
 
 URL:            https://github.com/%{gituser}/%{gitrepo}
 Source0:        %{url}/archive/%{commit}/%{gitrepo}-%{commit}.tar.gz
-Source1:        %{url}/archive/%{commit}/%{gitrepo}-%{commit}.tar.gz
 
 BuildRequires:  cargo gtk3-devel openssl-devel
 Requires:       gnome-shell-extension-pop-shell
 
 Recommends:     libqalculate qalc fd-find
 
+Provides:       pop-launcher
 Provides:       qalc
 Provides:       find
 
@@ -40,14 +40,13 @@ the queries sent to the service.
 %make_build
 
 %install
-%make_install --DESTDIR
+%make_install
 
 %files
 %license COPYING
 %doc README.md debian/changelog
-/usr/bin/pop-launcher/*
-/usr/lib/pop-launcher/plugins/*
-/usr/lib/pop-launcher/scripts/session/*
+%{_libdir}/plugins/
+%{_libdir}/scripts/
 
 %changelog
 * Thu Nov 04 2021 Aiden Langley <me@aidenlangley.com> - 1.0.3
