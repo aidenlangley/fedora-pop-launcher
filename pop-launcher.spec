@@ -13,11 +13,6 @@ License:        GPLv3 and ASL 2.0 and MIT
 URL:            https://github.com/%{gituser}/%{gitrepo}
 Source0:        %{url}/archive/%{commit}/%{gitrepo}-%{commit}.tar.gz
 
-ExclusiveArch:  %{rust_arches}
-%if %{__cargo_skip_build}
-BuildArch:      noarch
-%endif
-
 BuildRequires:  cargo
 BuildRequires:  gtk3-devel
 BuildRequires:  openssl-devel
