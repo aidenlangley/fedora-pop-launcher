@@ -46,7 +46,7 @@ the queries sent to the service.
 %files
 %license COPYING
 %doc README.md debian/changelog
-/%{_binpath}/%{name}
+/%{_bindir}/%{name}
 %dir %{_prefix}/lib/%{name}/plugins/calc/
 %dir %{_prefix}/lib/%{name}/plugins/desktop_entries/
 %dir %{_prefix}/lib/%{name}/plugins/files/
