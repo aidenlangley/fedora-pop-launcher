@@ -8,21 +8,23 @@ Summary:        Modular IPC-based desktop launcher service
 
 License:        GPLv3 and ASL 2.0 and MIT
 
+ExclusiveArch:  %{rust_arches}
+
 %global gituser pop-os
 %global gitrepo launcher
 %global commit  170c6bbfb25c0683c4e70701a1da88613968cf2a
 
 URL:            https://github.com/%{gituser}/%{gitrepo}
 Source0:        %{url}/archive/%{commit}/%{gitrepo}-%{commit}.tar.gz
+Source1:        %{url}/archive/%{commit}/%{gitrepo}-%{commit}.tar.gz
 
-BuildRequires:  cargo
-BuildRequires:  gtk3-devel
-BuildRequires:  openssl-devel
-
+BuildRequires:  cargo gtk3-devel openssl-devel
 Requires:       gnome-shell-extension-pop-shell
-Requires:       libqalculate
-Requires:       fd-find
-Requires:       qalc
+
+Recommends:     libqalculate qalc fd-find
+
+Provides:       qalc
+Provides:       find
 
 %description
 Modular IPC-based desktop launcher service, written in Rust. Desktop launchers
@@ -38,11 +40,14 @@ the queries sent to the service.
 %make_build
 
 %install
-%make_install
+%make_install --DESTDIR
 
 %files
 %license COPYING
 %doc README.md debian/changelog
+/usr/bin/pop-launcher/*
+/usr/lib/pop-launcher/plugins/*
+/usr/lib/pop-launcher/scripts/session/*
 
 %changelog
 * Thu Nov 04 2021 Aiden Langley <me@aidenlangley.com> - 1.0.3
