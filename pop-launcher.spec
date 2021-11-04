@@ -51,18 +51,18 @@ the queries sent to the service.
 %license COPYING
 %doc README.md debian/changelog
 %{_binpath}/%{name}
-%dir %{_prefix}/usr/%{name}/plugins/calc/
-%dir %{_prefix}/usr/%{name}/plugins/desktop_entries/
-%dir %{_prefix}/usr/%{name}/plugins/files/
-%dir %{_prefix}/usr/%{name}/plugins/find/
-%dir %{_prefix}/usr/%{name}/plugins/pop_shell/
-%dir %{_prefix}/usr/%{name}/plugins/pulse/
-%dir %{_prefix}/usr/%{name}/plugins/recent/
-%dir %{_prefix}/usr/%{name}/plugins/scripts/
-%dir %{_prefix}/usr/%{name}/plugins/terminal/
-%dir %{_prefix}/usr/%{name}/plugins/web/
-%dir %{_prefix}/usr/%{name}/scripts/session/
-%dir %{_prefix}/usr/%{name}/scripts/system76-power/
+%dir %{_prefix}/lib/%{name}/plugins/calc/
+%dir %{_prefix}/lib/%{name}/plugins/desktop_entries/
+%dir %{_prefix}/lib/%{name}/plugins/files/
+%dir %{_prefix}/lib/%{name}/plugins/find/
+%dir %{_prefix}/lib/%{name}/plugins/pop_shell/
+%dir %{_prefix}/lib/%{name}/plugins/pulse/
+%dir %{_prefix}/lib/%{name}/plugins/recent/
+%dir %{_prefix}/lib/%{name}/plugins/scripts/
+%dir %{_prefix}/lib/%{name}/plugins/terminal/
+%dir %{_prefix}/lib/%{name}/plugins/web/
+%dir %{_prefix}/lib/%{name}/scripts/session/
+%dir %{_prefix}/lib/%{name}/scripts/system76-power/
 
 %changelog
 * Thu Nov 04 2021 Aiden Langley <me@aidenlangley.com> - 1.0.3-170c6bbfb25c0683c4e70701a1da88613968cf2a
