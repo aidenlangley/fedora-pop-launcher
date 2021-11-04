@@ -44,10 +44,12 @@ the queries sent to the service.
 
 
 %files
-%license    COPYING
-%doc        README.md debian/changelog
-%dir        /usr/lib/%{name}/plugins/
-%dir        /usr/lib/%{name}/scripts/
+%license COPYING
+%doc README.md debian/changelog
+%dir %{_prefix}/lib/%{name}/plugins/
+%dir %{_prefix}/lib/%{name}/scripts/
+%{_prefix}/lib/%{name}/plugins/*
+%{_prefix}/lib/%{name}/scripts/*
 %{_bindir}/pop-launcher
 
 %changelog
